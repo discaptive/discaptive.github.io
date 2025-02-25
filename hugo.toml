@@ -14,9 +14,9 @@ title = 'Discaptive'  # Title of your website
   # https://giscus.app
   [params.giscus]
     repo = 'discaptive/discaptive.github.io'
-    repoId = '[ENTER REPO ID HERE]'
+    repoId = 'R_kgDON-1NgQ'
     category = 'General'
-    categoryId = '[ENTER CATEGORY ID HERE]'
+    categoryId = 'DIC_kwDON-1Ngc4CnTfD'
     mapping = 'pathname'
     reactionsEnabled = '1'
     inputPosition = 'top'
