@@ -1,6 +1,6 @@
 baseURL = 'https://discaptive.com'  # Your domain name.
 languageCode = 'en-US'
-title = 'Discaptive'  # Title of your website
+title = 'Discaptive의 개발 블로그'  # Title of your website
 
 [[module.imports]]
   path = "github.com/discaptive/hugo-discaptive"
