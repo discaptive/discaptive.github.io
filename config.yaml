@@ -1,0 +1,17 @@
+base: "https://discaptive.com" # DO NOT INCLUDE "/" AT THE END.
+
+author:
+  name: "Y.S. LEE"
+  github: "discaptive"
+  resume: "https://discaptive.com"
+
+giscus:
+  repo: "discaptive/discaptive.github.io"
+  repoId: "R_kgDOOI_msg"
+  category: "General"
+  categoryId: "DIC_kwDOOI_mss4CoRBm"
+  mapping: "pathname"
+  reactionsEnabled: "1"
+  inputPosition: "bottom"
+  theme: "light"
+  lang: "en"
