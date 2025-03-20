@@ -129,3 +129,4 @@ You can view the site live locally by running `npm run dev`.
 ## License
 
 MIT Licensed, see [LICENSE](https://github.com/discaptive/minimic-discaptive/blob/main/LICENSE).
+
