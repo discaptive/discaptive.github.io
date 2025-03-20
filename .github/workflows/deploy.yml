@@ -16,7 +16,7 @@ jobs:
 
       - name: Merge cloned repository
         run: |
-          rsync -av minimic/ ./
+          rsync -av --ignore-existing minimic/ ./
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
