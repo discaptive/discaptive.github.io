@@ -1,6 +1,6 @@
 ---
 title: "SICP: Formulating Abstractions with Higher-Order Procedures 1"
-date: "2025-03-24"
+date: "2025-03-25"
 ---
 
 앞서 봤던 프로시저들은 특정 숫자를 직접 정하지 않고, input으로 받은 그 숫자에 대한 복합적인 연산을 표현하는 정도의 *abstraction*이었다.
