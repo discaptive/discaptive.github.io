@@ -1,5 +1,5 @@
 ---
-title: "SICP: Formulating Abstractions with Higher-Order Procedures 1"
+title: "SICP: Formulating Abstractions with Higher-Order Procedures"
 date: "2025-03-25"
 ---
 
@@ -232,3 +232,53 @@ f(x, y) = xa^2 + yb + ab
 ```
 
 결국 이는 `lambda`와 다를 게 없다. 위에서 얘기했듯이 `let`으로 더 편하게 만든 것이나 마찬가지이다.
+
+## Procedures as Returned Values
+
+우리는 지금까지 `higher-order procedures`를 알아보면서 arguments에 프로시저를 받아 쓸 수 있고, 이는 언어의 표현력이 크게 늘어난다는 사실을 알게 됐다. 마찬가지로 프로시저 또한 프로시저의 return 값으로 돌려줄 수 있다면 언어의 표현력을 더욱 끌어올릴 수 있지 않을까?
+
+### Newton's method
+
+앞서 살펴봤던 제곱근(`square-root`)에서 Newton의 방법을 살펴본 바 있다. 정확히는 Newton의 방법에 근거해 만들어진 방법이다.
+
+뉴턴의 방법은 뭘까?
+
+1. 함수 `f(x)`의 해를 찾고 싶다. 즉, `f(x) = 0`이 되는 `x`의 값을 찾는 게 목표다.
+2. 어떤 초기 추정값 `x0`를 정한다.
+3. `x0`에서 접선을 이용해서 더 좋은 추정값 `x1`을 구한다.
+4. 이 과정을 반복해서 더 정확한 근사값을 찾는다.
+
+```markdown
+x.n+1 = x.n - f(x.n) / f'(x.n)
+
+x.n = 현재 추정 값
+f(x.n) = 함수 값
+f'(x.n) = 도함수(기울기) 값
+x.n+1 = 새로운 추정값
+```
+
+위를 반복했을 때 점점 더 정확한 해를 얻을 수 있다.
+
+뉴턴의 방법을 프로시저로 나타내려면 먼저 미분`f'(x.n)`을 표현해야한다.
+
+```scheme
+(define (deriv g)
+  (lambda (x)
+    (/ (- (g (+ x dx)) (g x)) ; f(x+dx) - f(x)
+      dx)))                   ; 나누기 dx
+
+(define dx 0.00001)
+```
+
+`deriv` 프로시저는 `g`라는 프로시저를 받아서 그 프로시저의 미분을 근사적으로 계산하는 새로운 프로시저 `lambda`를 반환한다.
+
+### Abstractions and first-class procedures
+
+프로그래밍 언어에서는 계산 과정에서 어떤 기능을 어떻게 다루어야 하는지 여러 가지의 제약을 걸어 둔다. 가장 제약이 적은 것을 흔히 **first-class**에 속한다고 한다.
+
+**first-class**가 가지는 특징은 다음과 같다.
+
+- 변수의 값이 될 수 있다. 다시 말해, 이름을 부여할 수 있다.
+- 프로시저의 인자(argument)로도 쓸 수 있다.
+- 프로시저의 결과(return) 값으로도 만들어질 수 있다.
+- 데이터 구조 속에 넣을 수 있다.
