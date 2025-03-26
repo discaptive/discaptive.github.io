@@ -282,3 +282,25 @@ x.n+1 = 새로운 추정값
 - 프로시저의 인자(argument)로도 쓸 수 있다.
 - 프로시저의 결과(return) 값으로도 만들어질 수 있다.
 - 데이터 구조 속에 넣을 수 있다.
+
+## 정리
+
+1. **고차 함수(Higher-Order Procedures)**: 함수를 인자나 결과로 사용.
+
+- 예: `(define (compose f g) (lambda (x) (f (g x))))`.
+
+2. **일급 객체(First-Class Citizens)**: 함수를 변수에 저장, 전달 가능.
+
+- 예: `(define sq (lambda (x) (* x x)))`.
+
+3. **람다(Lambda)**: 이름 없는 함수로 즉석에서 정의.
+
+- 예: `(lambda (x) (+ x 1))`.
+
+4. **추상화 패턴**: 반복되는 계산을 일반화.
+
+- 예: `(define (sum term a next b) ...)`로 합계나 곱셈 통합.
+
+5. **수치적 응용**: 제곱근(뉴턴 방법), 고정점(fixed point).
+
+- 예: `(define (sqrt x) (fixed-point (lambda (y) (/ x y)) 1.0))`.

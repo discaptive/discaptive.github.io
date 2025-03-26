@@ -462,3 +462,23 @@ define (sqrt x)
 ```
 
 이렇게 procedure의 definition을 nested한 걸 *block structure*라고 부른다. 그리고 사실 이전에 만든 procedure와 달리 define에서 `x`를 다 제거했는데 이는 `sqrt`에서 들어온 `x`를 바로 그 하위 procedure의 body 안에서 binding 할 수 있기 때문이다. 이를 *lexical scoping*이라고 부를 수 있다.
+
+## 정리
+
+1. **기본 표현식**: 숫자, 연산자(`+`, `*`), 변수 정의(`define`).
+
+- 예: `(define x 10)`, `(+ 3 4)`.
+
+2. **프로시저 정의**: 함수를 만들고 호출.
+
+- 예: `(define (square x) (* x x))`.
+
+3. **치환 모델(Substitution Model)**: 함수 호출이 어떻게 계산되는지.
+
+- `(square 3)` → `(* 3 3)` → `9`.
+
+4. **조건과 논리**: (if), (cond)로 분기.
+
+- 예: `(if (> x 0) x (- x))`.
+
+정의: 프로그래밍은 값, 연산, 함수로 계산을 표현하는 과정.
